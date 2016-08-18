@@ -3,7 +3,8 @@ class VotesController < ApplicationController
 	before_action :set_vote
 
 	def create 
-		@vote = @book.votes.new(vote_params)
+		@vote = @book.votes.new
+		@vote.rating = params[:vote][:rating]
 
 		if @comment.save
 			redirect_to @book, notice: "Vote saved."

@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+	before_action :authenticate_admin!, [:show, :new, :destroy]
 	before_action :set_category, only: [:show, :destroy]
 	before_action :authorize_admin!, only: [:new, :create, :destroy]
 
@@ -35,13 +36,10 @@ class CategoriesController < ApplicationController
 
   private
 
-    def authorize_user!
-      #redirect_to root_path, notice: "Not authorized" unless @idea.user_id == current_user.id
+    def authorize_admin!
+      redirect_to root_path, notice: "Not authorized" unless @book.admin_id == current_admin.id
     end
 
-	def authenticate_user!
-
-  	end
 
 	def load_categories
 		@categories = Category.all.collect {|c| [c.name, c.id]}

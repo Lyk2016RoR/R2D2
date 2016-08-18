@@ -7,3 +7,11 @@
 
     <%= link_to "delete", book_path(book.id), method: :delete %>
 <% end %>
+<br><br><br><br><br><br><br><br><br><br>
+<% if current_user.present? %>
+  <a href="#"><%= current_user.email %></a>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Login", new_user_session_path %>
+  <%= link_to "Register", new_user_registration_path %>
+<% end %>

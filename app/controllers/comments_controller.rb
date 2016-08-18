@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:destroy]
 
 	def create
-      @comment = @idea.comments.new(comment_params)
+      @comment = @book.comments.new(comment_params)
 
       if @comment.save
         redirect_to @book, notice: "Comment was saved"

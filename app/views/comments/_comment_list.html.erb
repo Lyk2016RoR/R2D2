@@ -1,0 +1,9 @@
+Comments
+
+
+    <% @book.comments.each do |comment| %>
+      <small><%= comment.user.email %> says:</small>
+      <p>
+        <%= comment.body %>
+      </p>
+    <% end %>

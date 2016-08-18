@@ -11,6 +11,11 @@ class VotesController < ApplicationController
 			redirect_to @book, notice: "Problem occured during saving vote."	
 		end
 	end
+
+	def new
+
+	end
+
 	private
 		def vote_params
 			params.require(:vote).permit(:rating)
@@ -21,9 +26,9 @@ class VotesController < ApplicationController
 		end
 
 		def set_book
-			@book = Book.find(params[:books_id])
+			@book = Book.find(params[:book_id])
 		end
 
 	end
 
-end
+

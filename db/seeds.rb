@@ -17,3 +17,5 @@ Book.create(name:"Book1",pages:5,description:"Dexcrpadsad",category: c3,author: 
 Book.create(name:"Book2",pages:5,description:"Dexcrpadsad",category: c2,author: a1)
 Book.create(name:"Book3",pages:5,description:"Dexcrpadsad",category: c3,author: a2)
 
+
+Vote.create(rating:1,book_id:1)

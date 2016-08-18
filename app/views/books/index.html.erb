@@ -3,4 +3,6 @@
     <%= book.pages %><br/>
     <%= book.description %><br/><br><br>
     <%= book.comments.name %>
+
+    <%= link_to "delete", book_path(book.id), method: :delete %>
 <% end %>

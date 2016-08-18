@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 
-  before_action :get_authors_and_categories, only: [:new, :create]
+  before_action :get_authors_and_categories, only: [:new, :create,:destroy]
 
 
   def index
@@ -13,6 +13,7 @@ class BooksController < ApplicationController
   end
 
   def create
+
     @book=Book.new(book_params)
     if @book.save
       flash[:success] = 'Islem basariyla tamamlandi'
@@ -20,6 +21,13 @@ class BooksController < ApplicationController
     else
       render :new
     end
+
+  end
+
+  def destroy
+    @book=Book.find(params[:id])
+    @book.destroy
+    redirect_to books_path, notice: "Idea was deleted"
 
   end
 

@@ -1,4 +1,5 @@
 <% @books.each do |book| %>
+<%=link_to book.name, book %>
     <%= book.name %><br/>
     <%= book.pages %><br/>
     <%= book.description %><br/><br><br>

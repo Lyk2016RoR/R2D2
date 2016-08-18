@@ -3,10 +3,12 @@
 <%= @book.description %><br/><br><br>
 <%= @book.comments.name %>
 
-<% @book.votes.each do |u| %>
-    <%= u.rating %><br />
-<% end %>
+
 
 <%= render "/comments/comment_list" %>
 <%= render "/comments/form" %>
 <%= render "/votes/form" %>
+
+<% @book.votes.each do |u| %>
+    <%= u.rating %><br />
+<% end %>

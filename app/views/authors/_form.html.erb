@@ -1,0 +1,22 @@
+<%= form_for @author do |f| %>
+
+  <%= f.label :firstName %>
+  <%= f.text_field :firstName, placeholder: 'firstName', class: "form-control input-sm" %><br>
+  <br>
+    <%= f.label :lastName %>
+    <%= f.text_field :lastName, placeholder: 'lastName', class: "form-control input-sm" %><br>
+    <br>
+  <%= f.label :description %>
+  <br>
+  <%= f.text_area :description, placeholder: "description", rows: 10 %><br>
+  <br>
+  <br>
+
+
+
+   <br />
+   <br />
+   <br />
+
+  <%= f.submit 'Gonder' %>
+<% end %>

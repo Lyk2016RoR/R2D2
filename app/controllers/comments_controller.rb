@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:destroy]
   before_action :authorize_user!, only: [:destroy]
 
-	def create
+	  def create
       @comment = @book.comments.new(comment_params)
 
       if @comment.save!

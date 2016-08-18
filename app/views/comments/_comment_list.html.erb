@@ -4,5 +4,10 @@ Comments
     <% @book.comments.each do |comment| %>
       <p>
         <%= comment.body %>
+        <% if current_user.present? && comment.user_id == current_user.id %>
+          <small><%= link_to "Delete", book_comment_path(@book, comment), method: :delete %></small>
+        <% end %>
+      </p>
+    <% end %>
       </p>
     <% end %>

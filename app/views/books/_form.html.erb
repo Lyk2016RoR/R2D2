@@ -4,6 +4,6 @@
     <%= f.text_field :name, placeholder: 'name', class: "form-control input-sm" %><br>
     <br>
     <%= f.select :author_id, @authors %>
-
+    <%= f.select :category_id, @categories %>
     <%= f.submit 'Gonder' %>
 <% end %>

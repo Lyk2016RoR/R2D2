@@ -3,7 +3,6 @@ class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :update, :edit, :destroy]
 
 
-
   def new
     @author = Author.new
   end
@@ -33,7 +32,7 @@ class AuthorsController < ApplicationController
 
   def update
 
-    if @author.update(idea_params)
+    if @author.update(author_params)
       redirect_to author_path(@author)
     else
       load_form_data
@@ -44,7 +43,7 @@ class AuthorsController < ApplicationController
 
   def destroy
     @author.destroy
-    redirect_to authors_path, notice: "Idea was deleted"
+    redirect_to authors_path, notice: "Author was deleted"
   end
 
   private
@@ -54,7 +53,7 @@ class AuthorsController < ApplicationController
   end
 
   def author_params
-    params.require(:author).permit(:fistName, :description, :lastName)
+    params.require(:author).permit(:firstName, :description, :lastName)
   end
 
 

@@ -1,4 +1,4 @@
-Display Idea<br /><br />
+<h2>Display Author</h2><br /><br />
 
 <b>ID:  </b><%= @author.id %><br />
 <b>Title:  </b><%= @author.firstName %><br />
@@ -7,6 +7,14 @@ Display Idea<br /><br />
 
 <br /><br /><br />
 
-
 <br/><br/>
 
+<br/><br/>
+<%= link_to "Back to main page", books_path %>
+
+<% if current_user.present? %>
+  <br/>
+  <%= link_to "Edit Author", edit_author_path(@author) %>
+  <br/>
+
+<% end %>

@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 	def create
       @comment = @book.comments.new(comment_params)
 
-      if @comment.save
+      if @comment.save!
         redirect_to @book, notice: "Comment was saved"
       else
         redirect_to @book, notice: "Comment couldn't saved"

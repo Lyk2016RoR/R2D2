@@ -1,23 +1,19 @@
 class VotesController < ApplicationController
 	before_action :set_book
-	before_action :set_vote
+	#before_action :set_vote , only: [:create]
 
 	def create 
-		@vote = @book.votes.new
-		@vote.rating = params[:vote][:rating]
+		@vote = @book.votes.new(vote_params)
 
-		if @comment.save
+		if @vote.save
 			redirect_to @book, notice: "Vote saved."
 		else 
 			redirect_to @book, notice: "Problem occured during saving vote."	
 		end
 	end
 
-	def new
-
-	end
-
 	private
+
 		def vote_params
 			params.require(:vote).permit(:rating)
 		end
@@ -30,6 +26,6 @@ class VotesController < ApplicationController
 			@book = Book.find(params[:book_id])
 		end
 
-	end
+end
 
 

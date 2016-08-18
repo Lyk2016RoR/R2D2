@@ -1,4 +1,4 @@
-
+<% if current_user.present? %>
   <%= form_for [@book, @book.votes.build] do |f| %>
     <% 5.times do |i| %>
       <%= f.radio_button :rating, i+1 %>
@@ -10,5 +10,6 @@
 
     <%= f.submit "Vote", class: "btn btn-sm btn-primary" %>
   <% end %>
+ <% end %>
 
  

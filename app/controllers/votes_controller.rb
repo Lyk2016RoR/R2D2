@@ -7,6 +7,7 @@ class VotesController < ApplicationController
 
 	def create 
 		@vote = @book.votes.new
+		@vote.rating = params[:vote][:rating]
 		@vote.user = current_user
 		if @vote.save
 			redirect_to @book, notice: "Vote saved."

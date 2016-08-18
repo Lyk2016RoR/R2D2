@@ -2,6 +2,7 @@ Comments
 
 
     <% @book.comments.each do |comment| %>
+    <small><%= comment.user.email %> says:</small>
       <p>
         <%= comment.body %>
         <% if current_user.present? && comment.user_id == current_user.id %>

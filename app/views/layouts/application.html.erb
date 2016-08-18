@@ -9,6 +9,26 @@
   </head>
 
   <body>
+  <h1>User Login</h1>
+  <% if current_user.present? %>
+  <a href="#"><%= current_user.email %></a>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Login", new_user_session_path %>
+  <%= link_to "Register", new_user_registration_path %>
+<% end %>
+
+<br><br><br>
+  <h1>Admin Login</h1>
+<% if current_admin.present? %>
+  <a href="#"><%= current_admin.email %></a>
+  <%= link_to "Logout", destroy_admin_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Login", new_admin_session_path %>
+  <%= link_to "Register", new_admin_registration_path %>
+<% end %>
+
+<br><br><br>
     <%= yield %>
   </body>
 </html>

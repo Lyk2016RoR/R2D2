@@ -1,0 +1,9 @@
+
+<%= form_for @book do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: 'name', class: "form-control input-sm" %><br>
+    <br>
+    <%= f.select :author_id, @authors %>
+
+    <%= f.submit 'Gonder' %>
+<% end %>

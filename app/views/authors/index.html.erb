@@ -1,0 +1,4 @@
+
+	    	<% @author.each do |author| %>
+	    		<%= link_to author.firstName, author_path(author), class: "list-group-item" %>
+	    	<% end %>

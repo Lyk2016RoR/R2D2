@@ -35,8 +35,12 @@ class CategoriesController < ApplicationController
 
   private
 
+    def authorize_user!
+      #redirect_to root_path, notice: "Not authorized" unless @idea.user_id == current_user.id
+    end
+
 	def authenticate_user!
-		
+
   	end
 
 	def load_categories

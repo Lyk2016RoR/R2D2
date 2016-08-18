@@ -1,5 +1,5 @@
 
-  <%= form_for [@book, @vote] do |f| %>
+  <%= form_for [@book, @book.votes.build] do |f| %>
     <% 5.times do |i| %>
       <%= f.radio_button :rating, i+1 %>
       <% (i+1).times do %>

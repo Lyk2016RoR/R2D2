@@ -14,7 +14,7 @@ class BooksController < ApplicationController
 
   def show
     @book=Book.find(params[:id])
-
+    @vote = @book.votes.build
   end
 
   def create

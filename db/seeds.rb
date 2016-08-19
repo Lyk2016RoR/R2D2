@@ -19,3 +19,5 @@ Book.create(name:"Book3",pages:5,description:"Dexcrpadsad",category: c3,author: 
 
 
 Vote.create(rating:1,book_id:1)
+
+u=User.create(id: 4, email: "user1@user.com", created_at: "2016-08-18 16:07:44", updated_at: "2016-08-18 16:07:44")

@@ -32,7 +32,7 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
-    redirect_to books_path, notice: "Idea was deleted"
+    redirect_to books_path, notice: "Book was deleted"
 
   end
 

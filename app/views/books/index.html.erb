@@ -1,9 +1,10 @@
 <% @books.each do |book| %>
-<%=link_to book.name, book %>
-    <%= book.name %><br/>
+<%=link_to book.name, book %><br/>
     <%= book.pages %><br/>
     <%= book.description %><br/>
-    <%= book.comments.name %>
-
     <%= link_to "delete", book_path(book.id), method: :delete %><br/><br/><br/>
 <% end %>
+
+<br><br><br><br><br><br><br><br><br><br>
+
+<%= link_to "Add new Book", new_book_path()%>

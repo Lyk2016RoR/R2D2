@@ -1,4 +1,4 @@
 class Author < ApplicationRecord
-	validates :fistName, :lastName, presence: true
+	validates :firstName, :lastName, presence: true
 	has_many :books
 end

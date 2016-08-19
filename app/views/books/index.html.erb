@@ -4,7 +4,7 @@
     <%= book.pages %><br/>
     <%= book.description %><br/><br><br>
     <%= book.comments.name %>
-    <%= link_to "New Book", new_book_path, method: :post %>
+    <%= link_to "New Book", new_book_path, method: :get %>
     <%= link_to "delete", book_path(book.id), method: :delete %>
 <% end %>
 <br><br><br><br><br><br><br><br><br><br>

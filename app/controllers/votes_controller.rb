@@ -1,9 +1,9 @@
 class VotesController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_book
+	before_action :set_vote , only: [:update]
+	before_action :authorize_user!, only: [:update]
 	
-	#before_action :authorize_user!, only: [:edit, :update, :destroy]
-	#before_action :set_vote , only: [:create]
 
 	def create 
 		@vote = @book.votes.new
@@ -15,6 +15,14 @@ class VotesController < ApplicationController
 			redirect_to @book, notice: "Problem occured during saving vote."	
 		end
 	end
+
+	def update
+    if @vote.update(rating: params[:vote][:rating])
+      redirect_to @idea, notice: "Vote was saved."
+    else
+      redirect_to @idea, notice: "Vote is not valid."
+    end
+  end
 
 	private
 

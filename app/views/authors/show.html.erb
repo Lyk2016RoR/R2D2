@@ -1,6 +1,5 @@
 <h2>Display Author</h2><br /><br />
 
-<b>ID:  </b><%= @author.id %><br />
 <b>Title:  </b><%= @author.firstName %><br />
 <b>Description:  </b><%= @author.description %><br />
 <b>Category: </b><%= @author.lastName%><br /><br />
@@ -11,6 +10,8 @@
 
 <br/><br/>
 <%= link_to "Back to main page", books_path %>
+  <br/>
+<%= link_to "Back to Authors Page", authors_path %>
 
 <% if current_user.present? %>
   <br/>

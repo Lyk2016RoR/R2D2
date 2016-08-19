@@ -1,7 +1,7 @@
 <%= @book.name %><br/>
 <%= @book.pages %><br/>
 <%= @book.description %><br/><br><br>
-<%= @book.comments.name %>
+
 
 
 
@@ -9,6 +9,7 @@
 <%= render "/comments/form" %>
 <%= render "/votes/form" %>
 
+<br><br>
 <% @book.votes.each do |u| %>
-    <%= u.rating %><br />
+    <%= u.rating %>
 <% end %>

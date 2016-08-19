@@ -30,11 +30,10 @@ class BooksController < ApplicationController
 
   end
 
-  def destroy
-    @book.destroy
-    redirect_to books_path, notice: "Book was deleted"
-
-  end
+ # def destroy
+  #  @book.destroy
+   # redirect_to books_path, notice: "Book was deleted"
+  #end
 
   private
 

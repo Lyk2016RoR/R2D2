@@ -1,4 +1,10 @@
 
 <% @author.each do |author| %>
-	<%= link_to author.firstName + " " + author.lastName , author_path(author) %>
+	<%= link_to author.firstName + " " + author.lastName , author_path(author) %><br>
 <% end %>
+<br>
+<br>
+<br>
+<br>
+<%= link_to "Add new Author", new_author_path()%>
+

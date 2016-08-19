@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
-
-  before_action :get_authors_and_categories, only: [:new, :create,:destroy]
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :set_book, only: [:show, :destroy]
 
 
   def index
@@ -9,11 +9,11 @@ class BooksController < ApplicationController
 
   def new
     @book=Book.new
+    get_authors_and_categories
 
   end
 
   def show
-    @book=Book.find(params[:id])
     @vote = @book.votes.build
   end
 
@@ -24,13 +24,13 @@ class BooksController < ApplicationController
       flash[:success] = 'Islem basariyla tamamlandi'
       redirect_to books_path
     else
+      get_authors_and_categories
       render :new
     end
 
   end
 
   def destroy
-    @book=Book.find(params[:id])
     @book.destroy
     redirect_to books_path, notice: "Idea was deleted"
 
@@ -45,6 +45,10 @@ class BooksController < ApplicationController
   def get_authors_and_categories
     @authors = Author.all.collect {|c| [c.firstName, c.id ] }
     @categories = Category.all.collect {|c| [c.name, c.id ] }
+  end
+
+  def set_book
+    @book = Book.find(params[:id])
   end
 
 end

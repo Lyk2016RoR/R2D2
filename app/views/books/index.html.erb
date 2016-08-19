@@ -2,8 +2,8 @@
 <%=link_to book.name, book %>
     <%= book.name %><br/>
     <%= book.pages %><br/>
-    <%= book.description %><br/><br><br>
+    <%= book.description %><br/>
     <%= book.comments.name %>
 
-    <%= link_to "delete", book_path(book.id), method: :delete %>
+    <%= link_to "delete", book_path(book.id), method: :delete %><br/><br/><br/>
 <% end %>
